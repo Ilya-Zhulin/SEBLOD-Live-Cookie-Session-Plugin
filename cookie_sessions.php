@@ -28,8 +28,9 @@ class plgCCK_Field_LiveCookie_Sessions extends JCckPluginLive {
 		$options = parent::g_getLive($field->live_options);
 
 		// Prepare
-		$variable	 = $options->get('variable', '');
-		$source		 = $options->get('source', '');
+		$default	 = $options->get('default_value', '');
+		$variable	 = $options->get('variable', 'art_id');
+		$source		 = $options->get('source', 'cookie');
 
 		if ($variable && $source) {
 			switch ($source) {
@@ -44,9 +45,9 @@ class plgCCK_Field_LiveCookie_Sessions extends JCckPluginLive {
 					break;
 			}
 		}
-
+		$live	 = (strlen($live) > 0) ? $live : $default;
 		// Set
-		$value = $live;
+		$value	 = $live;
 	}
 
 }
