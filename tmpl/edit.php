@@ -17,6 +17,7 @@ JCckDev::initScript('live', $this->item);
 		<?php
 		echo JCckDev::renderForm('core_dev_text', '', $config, array('label' => 'Variable', 'storage_field' => 'variable', 'required' => 1));
 		echo JCckDev::renderForm('core_dev_select', '', $config, array('label' => 'Source', 'selectlabel' => 'None', 'options' => 'Cookie=cookie||Session=session', 'bool8' => 0, 'storage_field' => 'source', 'required' => 1));
+		echo JCckDev::renderForm('core_dev_text', '', $config, array('label' => 'Default Value', 'storage_field' => 'default_value', 'defaultvalue' => '999999'));
 		?>
     </ul>
 </div>
